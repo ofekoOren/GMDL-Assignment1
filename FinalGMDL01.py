@@ -22,17 +22,17 @@ def CreateRandomMatrix():
 #Create a random matrix to simulate random Gaussian noise.
 def AddNoise(picture, axs):
     eta = 2*np.random.standard_normal((102,102))
-    #Combine the matrix together to get noisy picture.
+    #Combine the matrix together to get a noisy picture.
     NoisyPic = picture + eta
     return NoisyPic
 
-#Help function that calculte the Ising model fraction needed.
+#Help function that calculates the Ising model fraction needed.
 def CalculateFrac(sum, picture ,i ,j):
     frac1 = np.exp( sum - (1/8)*(picture[i,j]-1)**2)
     frac2 = np.exp(-sum - (1/8)*(picture[i,j]+1)**2)
     return frac1, frac2
 
-#Create a random picture that fit the given temperature.
+#Create a random picture that fits the given temperature.
 def CreatePicture(temp):
     pic = CreateRandomMatrix()
     for k in range(50):
@@ -44,7 +44,7 @@ def CreatePicture(temp):
                 pic[i][j] = int(np.random.rand()<theta)*2-1
     return pic
 
-#Using Ising model to create a possibale picture from the posterior (noisy picture).
+#Using the Ising model to create a possible picture from the posterior (noisy picture).
 def IsingModel(picture, temp, axs):
     #Create a random matrix that the ising model will work on.
     ReconIsing = CreateRandomMatrix()
@@ -68,7 +68,7 @@ def ICM_Reconstruct(picture, temp, axs):
             for j in range(1,101):
                 sum=(ICM[i-1][j] + ICM[i+1][j] + ICM[i][j-1] + ICM[i][j+1])/temp
                 frac1 , frac2 = CalculateFrac(sum,picture,i,j)
-                #Same as Ising model just not using the random factor, using max instad.
+                #Same as the Ising model just not using the random factor, using max instead.
                 ICM[i][j] = int(frac1>frac2)*2-1
     return ICM
 
@@ -80,7 +80,7 @@ def ArgMax_Reconstruct(picture, axs):
     return sign
 
 temps = np.array([1,1.5,2])
-#Run all model and see how they work with diffrents temperatures.
+#Run all models and see how they work with different temperatures.
 for temp in temps:
     fig, axs = plt.subplots(1,5)
     fig.suptitle('Exercise10, Temp = '+ str(temp))
