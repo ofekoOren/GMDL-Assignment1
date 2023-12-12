@@ -3,8 +3,8 @@ This repository contains Python code that implements the Ising model for image r
 ### Introduction
 The Ising model is a mathematical model in statistical mechanics that describes the behavior of spins in a system. In this code, the Ising model is applied to reconstruct images from noisy input, and two additional methods (ICM and argmax) are provided for comparison.
 ### Dependencies
-Python 3
-NumPy
-Matplotlib
+-Python 3
+-NumPy
+-Matplotlib
 ### Examples
 The code includes examples showcasing image reconstruction using different temperatures for the Ising model. Each example generates original images, introduces random noise, and applies various reconstruction methods.
