@@ -10,7 +10,7 @@ Original file is located at
 import numpy as np
 import matplotlib.pyplot as plt
 
-#Create random matrix with frame of 0 (natural number).
+#Create a random matrix with a frame of 0 (natural number).
 def CreateRandomMatrix():
     x = np.random.randint(low=0, high=2,size=(102,102))*2-1
     x[0] = x[0]*0
@@ -19,14 +19,14 @@ def CreateRandomMatrix():
     x[101] = x[101]*0
     return x
 
-#Create random matrix simulate random gaussian noise.
+#Create a random matrix to simulate random Gaussian noise.
 def AddNoise(picture, axs):
     eta = 2*np.random.standard_normal((102,102))
     #Combine the matrix together to get noisy picture.
     NoisyPic = picture + eta
     return NoisyPic
 
-#Help function that calculte the ising model fraction needed.
+#Help function that calculte the Ising model fraction needed.
 def CalculateFrac(sum, picture ,i ,j):
     frac1 = np.exp( sum - (1/8)*(picture[i,j]-1)**2)
     frac2 = np.exp(-sum - (1/8)*(picture[i,j]+1)**2)
