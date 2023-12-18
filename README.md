@@ -8,3 +8,6 @@ The Ising model is a mathematical model in statistical mechanics that describes 
 - Matplotlib
 ### Examples
 [The code](https://github.com/ofekoOren/GMDL-Assignment1/blob/main/GMDL01.ipynb) includes examples showcasing image reconstruction using different temperatures for the Ising model. Each example generates original images, introduces random noise, and applies various reconstruction methods.
+
+
+![test](https://github.com/ofekoOren/GMDL-Assignment1/blob/main/Exemples/Exemple_1.png)
